@@ -1,5 +1,4 @@
 Django ~= 3.2.4
 djangorestframework ~= 3.12.4
 djangorestframework-jwt
-graphene-django
-graphene-django
+psycopg2 ~= 2.8.6

@@ -12,6 +12,12 @@ EXPOSE 8000
 ARG DEV= false
 RUN python -m venv new_env
 RUN source new_env/bin/activate
+# RUN apk add --update --no-cache postgresql-client
+# RUN apk add --update --no-cache --virtual .tmp-build-deps \ 
+#     build-base postgresql-dev musl-dev
+# RUN apk del .tmp-build-deps
+RUN apk update
+RUN apk add postgresql-dev gcc python3-dev musl-dev
 RUN pip install -r /tmp/requirements.txt
 
 ENV PATH = "/py/bin:$PATH"
